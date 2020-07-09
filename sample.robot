@@ -7,7 +7,7 @@ Library    RPA.Robocloud.Secrets.FileSecrets
 
 ***Variables***
 ${USERNAME}    s.ramraj@live.com
-${PWD}         India@11
+${PWD}         Test@11
 ${BROWSER}     chrome
 # ${RPA_SECRET_MANAGER}     RPA.Robocloud.Secrets.FileSecrets
 # ${RPA_SECRET_FILE}    F://Projects//rpaProject//secrets.json
