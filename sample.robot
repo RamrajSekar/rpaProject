@@ -3,14 +3,13 @@ Library    RPA.Browser
 Library    RPA.Salesforce
 Library    Collections
 # Resource   rpaProject/secrets.json
-Library    RPA.Robocloud.Secrets.FileSecrets
+# Library    RPA.Robocloud.Secrets.FileSecrets
 
 ***Variables***
 ${USERNAME}    s.ramraj@live.com
 ${PWD}         Test@11
 ${BROWSER}     chrome
-# ${RPA_SECRET_MANAGER}     RPA.Robocloud.Secrets.FileSecrets
-# ${RPA_SECRET_FILE}    F://Projects//rpaProject//secrets.json
+${APITOKEN}    vmJVD0SgUtOj143OOwzrP2li1
 
 ***Tasks***
 Login To Salesforce
@@ -38,10 +37,15 @@ Login To Salesforce
 
 *** Keywords ***
 Authorize Salesforce
-    ${secrets}=    Get Secret   salesforce
-    # Log Many    ${secrets}
-    Auth With Token
-    ...        username=${secrets}[USERNAME]
-    ...        password=${secrets}[PASSWORD]
-    ...        api_token=${secrets}[API_TOKEN]
+    # ${secrets}=    Get Secret   salesforce
+    # # Log Many    ${secrets}
+    # Auth With Token
+    # ...        username=${secrets}[USERNAME]
+    # ...        password=${secrets}[PASSWORD]
+    # ...        api_token=${secrets}[API_TOKEN]
     # Set Suite Variables
+    # WIthout Secrets
+    Auth With Token
+    ...        username=${USERNAME}
+    ...        password=${PWD}
+    ...        api_token=${APITOKEN}
